@@ -192,7 +192,7 @@ namespace TTNETAPI_Sample_WPF_VolumeRatio
             var app = App.Current as TTNETAPI_Sample_WPF_VolumeRatio.App;
             m_dispatcher = app.SDKDispatcher;
 
-            var app_key = "09b8c74f-fc06-92fe-deeb-c1e27b1cb1b6:c7688113-bef0-7981-986a-5131316cedb9";
+            var app_key = "";
             var env = ServiceEnvironment.ProdSim;
             var mode = TTAPIOptions.SDKMode.Client;
             var options = new TTAPIOptions(mode, env, app_key, 5000);
