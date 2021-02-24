@@ -130,7 +130,7 @@ namespace FillDownload
                 if (isDict == false &&  result.StatusCode == System.Net.HttpStatusCode.GatewayTimeout)
                 {
                     should_continue = true;
-                    DateTime max_time = DateTime.Now;
+                    DateTime max_time = DateTime.Now.ToUniversalTime();
 
                     int retry_count = 0;
                     for(retry_count = 0; retry_count < max_narrowing_retries; ++retry_count)
