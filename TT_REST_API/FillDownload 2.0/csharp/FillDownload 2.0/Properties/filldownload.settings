@@ -59,5 +59,8 @@
     <Setting Name="FileMode" Type="FillDownload.FileMode" Scope="User">
       <Value Profile="(Default)">Replace</Value>
     </Setting>
+    <Setting Name="NeedUpdate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

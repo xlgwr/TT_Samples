@@ -30,6 +30,7 @@ Copyright © 2018-2019 Trading Technologies International, Inc. All Rights Reser
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+using FillDownload.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,14 @@ namespace FillDownload
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            if (filldownload.Default.NeedUpdate)
+            {
+                filldownload.Default.Upgrade();
+                filldownload.Default.NeedUpdate = false;
+                filldownload.Default.Save();
+            }
+
             Application.Run(new FrmFillDownload());
         }
     }
