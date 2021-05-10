@@ -101,7 +101,9 @@ namespace FillDownload
                     catch(Exception e)
                     {
                         RaiseErrorEvent("Error: " + e.Message + e.StackTrace);
-                        m_running = false;
+                        //m_running = false;
+                        //等待5秒
+                        Thread.Sleep(5000);
                         break;  
                     }
 
