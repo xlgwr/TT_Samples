@@ -65,13 +65,8 @@ namespace FillDownload
             this.fbdOutFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.cbFileMode = new System.Windows.Forms.ComboBox();
             this.lblFileMode = new System.Windows.Forms.Label();
-            this.txtURLBase = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.rtxmsg = new System.Windows.Forms.RichTextBox();
-            this.txtURLparams = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -489,58 +484,6 @@ namespace FillDownload
             this.lblFileMode.TabIndex = 44;
             this.lblFileMode.Text = "File Mode";
             // 
-            // txtURLBase
-            // 
-            this.txtURLBase.Location = new System.Drawing.Point(70, 541);
-            this.txtURLBase.Name = "txtURLBase";
-            this.txtURLBase.Size = new System.Drawing.Size(86, 21);
-            this.txtURLBase.TabIndex = 45;
-            this.txtURLBase.Text = "ttaccount";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(-1, 546);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
-            this.label9.TabIndex = 46;
-            this.label9.Text = "接口前缀：";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(657, 539);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "调用";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // rtxmsg
-            // 
-            this.rtxmsg.Location = new System.Drawing.Point(10, 568);
-            this.rtxmsg.Name = "rtxmsg";
-            this.rtxmsg.Size = new System.Drawing.Size(724, 131);
-            this.rtxmsg.TabIndex = 48;
-            this.rtxmsg.Text = "";
-            // 
-            // txtURLparams
-            // 
-            this.txtURLparams.Location = new System.Drawing.Point(251, 541);
-            this.txtURLparams.Name = "txtURLparams";
-            this.txtURLparams.Size = new System.Drawing.Size(401, 21);
-            this.txtURLparams.TabIndex = 45;
-            this.txtURLparams.Text = "/account/{accountId}/limits";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(168, 546);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 12);
-            this.label10.TabIndex = 46;
-            this.label10.Text = "方法及参数：";
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -549,19 +492,24 @@ namespace FillDownload
             this.toolStrip1.TabIndex = 49;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(217, 463);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 41);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "测试API";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmFillDownload
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 711);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.rtxmsg);
+            this.ClientSize = new System.Drawing.Size(764, 525);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtURLparams);
-            this.Controls.Add(this.txtURLBase);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblFileMode);
             this.Controls.Add(this.cbFileMode);
             this.Controls.Add(this.label8);
@@ -622,7 +570,6 @@ namespace FillDownload
 
         #endregion
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.TextBox txtSecret;
         private System.Windows.Forms.TextBox txtOutput;
         private System.Windows.Forms.Label lblSecret;
         private System.Windows.Forms.Label lblOutputFile;
@@ -631,7 +578,6 @@ namespace FillDownload
         private System.Windows.Forms.Label lblStartTime;
         private System.Windows.Forms.Label lblEndTime;
         private System.Windows.Forms.Label lblEnvironment;
-        private System.Windows.Forms.TextBox txtEnvironment;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.DateTimePicker dtpStartTime;
         private System.Windows.Forms.Label label2;
@@ -640,7 +586,6 @@ namespace FillDownload
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtURL;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -657,13 +602,11 @@ namespace FillDownload
         private System.Windows.Forms.FolderBrowserDialog fbdOutFolder;
         private System.Windows.Forms.ComboBox cbFileMode;
         private System.Windows.Forms.Label lblFileMode;
-        private System.Windows.Forms.TextBox txtURLBase;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox rtxmsg;
-        private System.Windows.Forms.TextBox txtURLparams;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox txtSecret;
+        public System.Windows.Forms.TextBox txtEnvironment;
+        public System.Windows.Forms.TextBox txtURL;
     }
 }
 

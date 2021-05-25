@@ -82,6 +82,12 @@
     <Compile Include="FrmFillDownload.Designer.cs">
       <DependentUpon>FrmFillDownload.cs</DependentUpon>
     </Compile>
+    <Compile Include="fromTestAPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fromTestAPI.Designer.cs">
+      <DependentUpon>fromTestAPI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestManager.cs" />
@@ -89,6 +95,9 @@
     <Compile Include="TT_Info.cs" />
     <EmbeddedResource Include="FrmFillDownload.resx">
       <DependentUpon>FrmFillDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fromTestAPI.resx">
+      <DependentUpon>fromTestAPI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

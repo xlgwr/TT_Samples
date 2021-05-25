@@ -36,6 +36,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace FillDownload
 {
@@ -158,12 +159,11 @@ namespace FillDownload
             btnBrowse.Enabled = false;
 
             FDLog.LogMessage("Beginning downloads...");
-
-
+             
             m_fillThread = new FillDownloadThread(start_time, end_time, new TimeSpan(0, interval, 0), days_to_run, start_date);
             m_fillThread.FillDownload += fillThread_OnFillDownload;
             m_fillThread.OnError += OnError;
-            m_fillThread.Start();
+            m_fillThread.Start(); 
         }
 
         private void RestManager_OnTokenError(object sender, string error_message)
@@ -472,18 +472,9 @@ namespace FillDownload
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string targetstr = txtURLBase.Text;
-                string urlparams = txtURLparams.Text;
-                var result = RestManager.GetRequest(targetstr, urlparams);
-                rtxmsg.Clear();
-                rtxmsg.AppendText(result.Content); 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            fromTestAPI fromTestAPI = new fromTestAPI();
+            fromTestAPI.frmFillDownload = this;
+            fromTestAPI.Show();
         }
     }
 
