@@ -59,7 +59,7 @@ namespace FillDownload
             {
                 clbColumns.Items.Add(column, true);
             }
-             
+
             this.FormClosing += FrmFillDownload_FormClosing;
 
             cbFileMode.DataSource = Enum.GetValues(typeof(FileMode));
@@ -83,7 +83,7 @@ namespace FillDownload
                 return;
             }
 
-            if(interval <= 0)
+            if (interval <= 0)
             {
                 MessageBox.Show("Frequency must be greater than zero.");
                 return;
@@ -91,7 +91,7 @@ namespace FillDownload
 
             TimeSpan start_time = dtpStartTime.Value.TimeOfDay;
             TimeSpan end_time = dtpEndTime.Value.TimeOfDay;
-            if(start_time > end_time)
+            if (start_time > end_time)
             {
                 MessageBox.Show("Error: Start time must come before end time");
                 return;
@@ -114,7 +114,7 @@ namespace FillDownload
             }
 
             DateTime start_date = default(DateTime);
-            if(dtpStartDate.CustomFormat != " ")
+            if (dtpStartDate.CustomFormat != " ")
             {
                 // TimeStamp correction so it properly reflects midnight of 
                 // this day in local time
@@ -288,7 +288,7 @@ namespace FillDownload
             var selected_columns = clbColumns.SelectedItems;
 
             var selectEnumerator = selected_columns.GetEnumerator();
-            for(int i = 0; i < clbColumns.CheckedItems.Count; i++)
+            for (int i = 0; i < clbColumns.CheckedItems.Count; i++)
             {
                 header += clbColumns.CheckedItems[i].ToString() + ",";
             }
@@ -393,7 +393,7 @@ namespace FillDownload
             Properties.filldownload.Default.FileMode = (FileMode)cbFileMode.SelectedItem;
 
             var columns = new System.Collections.Specialized.StringCollection();
-            foreach(var col in clbColumns.CheckedItems)
+            foreach (var col in clbColumns.CheckedItems)
             {
                 columns.Add(col.ToString());
             }
@@ -467,6 +467,22 @@ namespace FillDownload
                         FDLog.LogMessage(row);
                     }
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string targetstr = txtURLBase.Text;
+                string urlparams = txtURLparams.Text;
+                var result = RestManager.GetRequest(targetstr, urlparams);
+                rtxmsg.Clear();
+                rtxmsg.AppendText(result.Content); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
